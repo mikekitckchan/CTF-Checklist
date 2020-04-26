@@ -2,7 +2,7 @@ This file containes a checklist for myself to use in CTF challenge.
 
 # Table of Content
 1. [Web-app Testing](#webapp)
-- [SQL Injection](##sqlinj)
+- [SQL Injection](#sqlinj)
 
 
 
