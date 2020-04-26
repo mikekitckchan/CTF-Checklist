@@ -1,9 +1,8 @@
-This file containes a checklist for myself to use in CTF challenge.
-
 # Table of Content
-1. [Web-app Testing](#webapp)
+1. [Web App](#webapp)
 - [SQL Injection](#sqlinj)
 - [XSS](#xss)
+- [Subdomain Takeover](#subdomain)
 
 
 
@@ -21,7 +20,7 @@ This file containes a checklist for myself to use in CTF challenge.
 
 
 <a name="webapp"></a>
-# Web-app testing
+# Web App 
 
 <a name="sqlinj"></a>
 ## SQL Injection
@@ -54,7 +53,11 @@ Above two are basically doing the same thing. If success, it would log us in to 
  ' UNION SELECT 1 # 
 ```
 
+<a name = "xss"></a>
+## XSS
 
+<a name ="subdomain"></a>
+## Subdomain Takeover
 
 
 
