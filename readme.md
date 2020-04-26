@@ -57,12 +57,12 @@ If above can log you in and you want to login as other users, you may use the st
 ```
 Thus, the whole SQL statement would becomes:
 
-```
+```SQL
 SELECT * from TABLE where USERNAME='' UNION SELECT 1 --AND PASSWORD='PASSWORD';
 ```
 
 
-
+```SQL
  ' UNION SELECT 1,2 # 
  ' UNION SELECT 1,2,3 # 
 ```
