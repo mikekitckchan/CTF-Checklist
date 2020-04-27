@@ -9,6 +9,7 @@
    - [XSS](#xss)
    - [Subdomain Takeover](#subdomain)
 - [Privilege Escalation](#privesc)
+   - [SUID[(#suid)
 
 
 
@@ -26,7 +27,8 @@
 - ```chmod +x [file]```: Add executable to file's chmod;
 - ```uniq [file1] [file2]```: Find the unique line between two files
 - ```base64 -d [file]```: Use base64 to decode text stored in file.
-
+- ```cat [file] | tr 'A-Za-z' 'N-ZA-Mn-za-m'```: Open a file and rot13
+- ```xxd [file]```: Read binary data of a file
 
 <a name="recon"></a>
 # Reconnaissance
@@ -35,6 +37,9 @@
 ### Nmap
 
 - ```nmap -p- -oA full-nonscripts [Target IP] --max-retries 0```: 
+-```nmap -sC -sV -O -oA [file] [target ip]```:
+
+
 
 
 <a name="nikto"></a>
@@ -110,4 +115,14 @@ SELECT * from TABLE where USERNAME='' UNION SELECT 1 --AND PASSWORD='PASSWORD';
 <a name ="privesc"></a>
 # Privilege Escalation
 
+<a name="suid"></a>
+### SUID
+
+If you type ```ls -al``` in console, there are something like ```rwxr--rwx root root``` next to your file name. So, what does it mean? It 
+
+To find file with SUID bit. Simply use following command:
+
+```
+find [directory] -perm -u=s -type f 2>/dev/null
+```
 
