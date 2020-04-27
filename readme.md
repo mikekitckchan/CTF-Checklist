@@ -1,11 +1,11 @@
 # Table of Content
 
-[Useful Linux Command](#linux)
+- [Useful Linux Command](#linux)
 
-[Web App](#webapp)
-- [SQL Injection](#sqlinj)
-- [XSS](#xss)
-- [Subdomain Takeover](#subdomain)
+- [Web App](#webapp)
+-- [SQL Injection](#sqlinj)
+-- [XSS](#xss)
+-- [Subdomain Takeover](#subdomain)
 
 
 
