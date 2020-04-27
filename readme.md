@@ -1,8 +1,24 @@
 # Table of Content
+
+[Useful Linux Command](#linux)
+
 [Web App](#webapp)
 - [SQL Injection](#sqlinj)
 - [XSS](#xss)
 - [Subdomain Takeover](#subdomain)
+
+
+
+<a name="linux"></a>
+#Useful Linux Command
+
+```ls```: List every file in a directory
+```cd [directory]```: Enter a directory
+```cd ..```: Go back up one directory
+```cd ~```: go back to home directory
+```pwd```: current folder
+```strings [file]``` : Grab human readable strings from a binary file
+```file [filename]```: Check a type of a file
 
 
 
@@ -20,12 +36,12 @@
 
 
 <a name="webapp"></a>
-# 1. Web App 
+# Web App 
 
 <a name="sqlinj"></a>
-## 1.1 SQL Injection
+## 1. SQL Injection
 
-### 1.1.1 Login Form 
+### 1.1 Login Form 
 Normally, a POST request would takes two parameters (i.e. username and password) from the login form. Thus, the SQL command at the backend is look something like this:
 
 ```SQL
