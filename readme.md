@@ -10,7 +10,7 @@
 
 
 <a name="linux"></a>
-#Useful Linux Command
+# Useful Linux Command
 
 - ```ls```: List every file in a directory
 - ```cd [directory]```: Enter a directory
