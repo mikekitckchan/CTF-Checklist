@@ -1,11 +1,14 @@
 # Table of Content
 
 - [Useful Linux Command](#linux)
-
+- [Reconnaissance](#recon)
+   - [Nmap](#nmap)
+   - [Nikto] (#nikto)
 - [Web App](#webapp)
    - [SQL Injection](#sqlinj)
    - [XSS](#xss)
    - [Subdomain Takeover](#subdomain)
+- [Privilege Escalation](#privesc)
 
 
 
@@ -20,8 +23,14 @@
 - ```strings [file]``` : Grab human readable strings from a binary file
 - ```file [filename]```: Check a type of a file
 
+<a name="recon"></a>
+# Reconnaissance
 
+<a name="nmap"></a>
+## Nmap
 
+<a name="nikto"></a>
+## Nikto
 
 
 
@@ -90,5 +99,7 @@ SELECT * from TABLE where USERNAME='' UNION SELECT 1 --AND PASSWORD='PASSWORD';
 <a name ="subdomain"></a>
 ## Subdomain Takeover
 
+<a name ="privesc"></a>
+# Privilege Escalation
 
 
