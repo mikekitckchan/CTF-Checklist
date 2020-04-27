@@ -12,13 +12,13 @@
 <a name="linux"></a>
 #Useful Linux Command
 
-```ls```: List every file in a directory
-```cd [directory]```: Enter a directory
-```cd ..```: Go back up one directory
-```cd ~```: go back to home directory
-```pwd```: current folder
-```strings [file]``` : Grab human readable strings from a binary file
-```file [filename]```: Check a type of a file
+- ```ls```: List every file in a directory
+- ```cd [directory]```: Enter a directory
+- ```cd ..```: Go back up one directory
+- ```cd ~```: go back to home directory
+- ```pwd```: current folder
+- ```strings [file]``` : Grab human readable strings from a binary file
+- ```file [filename]```: Check a type of a file
 
 
 
