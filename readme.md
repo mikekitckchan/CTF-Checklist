@@ -32,13 +32,13 @@
 # Reconnaissance
 
 <a name="nmap"></a>
-## Nmap
+### Nmap
 
 - ```nmap -p- -oA full-nonscripts [Target IP] --max-retries 0```: 
 
 
 <a name="nikto"></a>
-## Nikto
+### Nikto
 
 
 
@@ -56,9 +56,9 @@
 # Web App 
 
 <a name="sqlinj"></a>
-## 1. SQL Injection
+### SQL Injection
 
-### 1.1 Login Form 
+#### Login Form 
 Normally, a POST request would takes two parameters (i.e. username and password) from the login form. Thus, the SQL command at the backend is look something like this:
 
 ```SQL
@@ -102,10 +102,10 @@ SELECT * from TABLE where USERNAME='' UNION SELECT 1 --AND PASSWORD='PASSWORD';
 
 
 <a name = "xss"></a>
-## 2. XSS
+### XSS
 
 <a name ="subdomain"></a>
-## Subdomain Takeover
+### Subdomain Takeover
 
 <a name ="privesc"></a>
 # Privilege Escalation
