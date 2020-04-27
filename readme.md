@@ -9,7 +9,7 @@
    - [XSS](#xss)
    - [Subdomain Takeover](#subdomain)
 - [Privilege Escalation](#privesc)
-   - [SUID[(#suid)
+   - [SUID](#suid)
 
 
 
