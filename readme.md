@@ -3,9 +3,9 @@
 - [Useful Linux Command](#linux)
 
 - [Web App](#webapp)
-- - [SQL Injection](#sqlinj)
-- - [XSS](#xss)
-- - [Subdomain Takeover](#subdomain)
+ - [SQL Injection](#sqlinj)
+ - [XSS](#xss)
+ - [Subdomain Takeover](#subdomain)
 
 
 
