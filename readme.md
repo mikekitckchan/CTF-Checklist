@@ -15,7 +15,7 @@
       - [Subdomain Takeover](#subdomain)
 
 
-<a name=""useful"></a>
+<a name="useful"></a>
 # Useful Script
 <a name="linux"></a>
 ## Useful Linux Command
@@ -41,7 +41,7 @@
 ### Nmap
 
 - ```nmap -p- -oA full-nonscripts [Target IP] --max-retries 0```: 
--```nmap -sC -sV -O -oA [file] [target ip]```:
+- ```nmap -sC -sV -O -oA [file] [target ip]```:
 
 
 
