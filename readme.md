@@ -3,7 +3,7 @@
 - [Useful Linux Command](#linux)
 - [Reconnaissance](#recon)
    - [Nmap](#nmap)
-   - [Nikto] (#nikto)
+   - [Nikto](#nikto)
 - [Web App](#webapp)
    - [SQL Injection](#sqlinj)
    - [XSS](#xss)
@@ -16,18 +16,26 @@
 # Useful Linux Command
 
 - ```ls```: List every file in a directory
+- ```ls -al```: List every file in directory with its chmod.
 - ```cd [directory]```: Enter a directory
 - ```cd ..```: Go back up one directory
 - ```cd ~```: go back to home directory
 - ```pwd```: current folder
 - ```strings [file]``` : Grab human readable strings from a binary file
-- ```file [filename]```: Check a type of a file
+- ```file [directory] -type f -size 1033c -executable -readable```: Find a human readable file with size 1033, and executable.
+- ```chmod +x [file]```: Add executable to file's chmod;
+- ```uniq [file1] [file2]```: Find the unique line between two files
+- ```base64 -d [file]```: Use base64 to decode text stored in file.
+
 
 <a name="recon"></a>
 # Reconnaissance
 
 <a name="nmap"></a>
 ## Nmap
+
+- ```nmap -p- -oA full-nonscripts [Target IP] --max-retries 0```: 
+
 
 <a name="nikto"></a>
 ## Nikto
