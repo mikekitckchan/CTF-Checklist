@@ -1,21 +1,24 @@
 # Table of Content
-- [Useful Linux Command](#linux)
-- [Useful Reverse Shell](#reverseshell)
-- [Reconnaissance](#recon)
-   - [Nmap](#nmap)
-   - [Nikto](#nikto)
-- [Web App](#webapp)
-   - [SQL Injection](#sqlinj)
-   - [XSS](#xss)
-   - [Subdomain Takeover](#subdomain)
-- [Privilege Escalation](#privesc)
-   - [Shell Spawning](#shellspawn)
-   - [SUID](#suid)
+- [Useful Script](#useful)
+   - [Useful Linux Command](#linux)
+   - [Useful Reverse Shell](#reverseshell)
+   - [Reconnaissance](#recon)
+      - [Nmap](#nmap)
+      - [Nikto](#nikto)
+   - [Privilege Escalation](#privesc)
+      - [Shell Spawning](#shellspawn)
+      - [SUID](#suid)
+- [CTF Methodology](#ctfmethod)
+   - [Web App](#webapp)
+      - [SQL Injection](#sqlinj)
+      - [XSS](#xss)
+      - [Subdomain Takeover](#subdomain)
 
 
-
+<a name=""useful"></a>
+# Useful Script
 <a name="linux"></a>
-# Useful Linux Command
+## Useful Linux Command
 
 - ```ls```: List every file in a directory
 - ```ls -al```: List every file in directory with its chmod.
