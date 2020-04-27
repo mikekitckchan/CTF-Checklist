@@ -20,12 +20,12 @@
 
 
 <a name="webapp"></a>
-# Web App 
+# 1. Web App 
 
 <a name="sqlinj"></a>
-## SQL Injection
+## 1.1 SQL Injection
 
-### Login Form 
+### 1.1.1 Login Form 
 Normally, a POST request would takes two parameters (i.e. username and password) from the login form. Thus, the SQL command at the backend is look something like this:
 
 ```SQL
@@ -69,7 +69,7 @@ SELECT * from TABLE where USERNAME='' UNION SELECT 1 --AND PASSWORD='PASSWORD';
 
 
 <a name = "xss"></a>
-## XSS
+## 2. XSS
 
 <a name ="subdomain"></a>
 ## Subdomain Takeover
