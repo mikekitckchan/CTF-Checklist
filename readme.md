@@ -2,20 +2,16 @@
 - [Useful Linux Command](#linux)
 - [Useful Reverse Shell](#reverseshell)
 - [Reconnaissance](#recon)
-   - [Nmap](#nmap)
-   - [Nikto](#nikto)
+      - [Nmap](#nmap)
+      - [Nikto](#nikto)
 - [Privilege Escalation](#privesc)
-   - [Shell Spawning](#shellspawn)
-   - [SUID](#suid)
-
+      - [Shell Spawning](#shellspawn)
+      - [SUID](#suid)
 - [Web App](#webapp)
-   - [SQL Injection](#sqlinj)
-   - [Flask Cookies Forge](#flaskcookie)
-   - [XSS](#xss)
-   - [Subdomain Takeover](#subdomain)
-
-
-
+      - [SQL Injection](#sqlinj)
+      - [Flask Cookies Forge](#flaskcookie)
+      - [XSS](#xss)
+      - [Subdomain Takeover](#subdomain)
 
 <a name="linux"></a>
 ## Useful Linux Command
