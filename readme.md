@@ -11,6 +11,7 @@
    - [SQL Injection](#sqlinj)
    - [Flask Cookies Forge](#flaskcookie)
    - [XSS](#xss)
+   - [Symfony](#symfony)
    - [XML External Entity (XXE)](#xxe)
    - [Subdomain Takeover](#subdomain)
 
@@ -156,6 +157,10 @@ This command would brute force and find out the secret key. Once, a secret key i
 
 <a name = "xss"></a>
 ### XSS
+
+<a name ="symfony"></a>
+### Symfony
+If the web app uses a php tools called symfony, you can try to access /_profile to access the log.
 
 <a name = "xxe"></a>
 ### XML External Entity (XXE)
