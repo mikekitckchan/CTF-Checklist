@@ -11,6 +11,7 @@
    - [SQL Injection](#sqlinj)
    - [Flask Cookies Forge](#flaskcookie)
    - [XSS](#xss)
+   - [XML External Entity (XXE)](#xxe)
    - [Subdomain Takeover](#subdomain)
 
 <a name="linux"></a>
@@ -155,6 +156,11 @@ This command would brute force and find out the secret key. Once, a secret key i
 
 <a name = "xss"></a>
 ### XSS
+
+<a name = "xxe></a>
+### XML External Entity (XXE)
+
+
 
 <a name ="subdomain"></a>
 ### Subdomain Takeover
