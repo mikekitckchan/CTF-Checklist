@@ -157,9 +157,9 @@ This command would brute force and find out the secret key. Once, a secret key i
 <a name = "xss"></a>
 ### XSS
 
-<a name = "xxe></a>
+<a name = "xxe"></a>
 ### XML External Entity (XXE)
-
+In web app that 
 
 
 <a name ="subdomain"></a>
