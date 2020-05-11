@@ -1,4 +1,5 @@
 # Table of Content
+- [Online Practice Ground](#practice)
 - [Useful Linux Command](#linux)
 - [Useful Reverse Shell](#reverseshell)
 - [Reconnaissance](#recon)
@@ -14,6 +15,14 @@
    - [Symfony](#symfony)
    - [XML External Entity (XXE)](#xxe)
    - [Subdomain Takeover](#subdomain)
+
+<a name="practice"></a>
+## Online Practice Ground
+
+https://ctf.airgapp.in/
+https://tghack.no/
+https://ctfd.sharkyctf.xyz
+https://covid19.threatsims.com/
 
 <a name="linux"></a>
 ## Useful Linux Command
