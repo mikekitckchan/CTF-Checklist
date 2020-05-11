@@ -15,6 +15,8 @@
    - [Symfony](#symfony)
    - [XML External Entity (XXE)](#xxe)
    - [Subdomain Takeover](#subdomain)
+- [Reverse Engineering](#re)
+   - [Methodology](#remeth)
 
 <a name="practice"></a>
 ## Online Practice Ground
@@ -178,4 +180,24 @@ In web app that
 
 <a name ="subdomain"></a>
 ### Subdomain Takeover
+
+<a name ="re"></a>
+# Reverse Engineering
+
+<a name="remeth"></a>
+## Methodology
+In CTF, once got a Reverser Engineering question, first thing to do is to check readable strings using following command
+```
+strings [filename]
+```
+
+If nothing interesting found, try following to find out what the file type is.
+
+```
+file [filename]
+```
+
+
+
+
 
