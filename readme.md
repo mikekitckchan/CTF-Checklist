@@ -5,6 +5,7 @@
 - [Reconnaissance](#recon)
    - [Nmap](#nmap)
    - [Nikto](#nikto)
+   - [Google Dorking](#googledork)
 - [Privilege Escalation](#privesc)
    - [Shell Spawning](#shellspawn)
    - [SUID](#suid)
@@ -57,6 +58,22 @@ https://covid19.threatsims.com/
 
 <a name="nikto"></a>
 ### Nikto
+
+<a name="googledork"></a>
+### Google Dork
+
+To find subdomains of a website:
+
+```
+site:[website] -www
+```
+
+Try to find secret file of a website:
+
+```
+site:[website] intitle:"index of"
+
+```
 
 <a name="reverseshell"></a>
 ## Useful Reverse Shell
