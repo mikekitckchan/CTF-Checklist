@@ -17,6 +17,7 @@
    - [Symfony](#symfony)
    - [XML External Entity (XXE)](#xxe)
    - [Subdomain Takeover](#subdomain)
+   - [Path Traversal Vulnerability] (#ptv)
 - [Reverse Engineering](#re)
    - [Methodology](#remeth)
 
@@ -242,6 +243,18 @@ In web app that
 
 <a name ="subdomain"></a>
 ### Subdomain Takeover
+
+<a name ="ptv"></a>
+### Path Traversal Vulnerability
+
+#### Checklist
+Adding below to the url and see if any return blank page instead of 404.
+
+```
+../../../
+../\../\../\
+/%5c..%5c..%5c/
+```
 
 <a name ="re"></a>
 # Reverse Engineering
