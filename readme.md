@@ -107,6 +107,20 @@ find [directory] -perm -u=s -type f 2>/dev/null
 <a name="sqlinj"></a>
 ### SQL Injection
 
+#### numberic input
+So, imagine if you need to update your profile using a form, the SQL request would be like:
+
+```
+UPDATE tablename SET column1 = 12 WHERE userid = 1;
+```
+As the data in column1 is numeric, you dont have quote on it. Thus, try to put the number in with # like 12#, the whole SQL statement would be like
+
+```
+UPDATE tablename SET column1 = 12# WHERE userid = 1;
+```
+
+It would comment out the "where" statement. It would result in updating the whole database instead of just userid 1.
+
 #### Login Form 
 Normally, a POST request would takes two parameters (i.e. username and password) from the login form. Thus, the SQL command at the backend is look something like this:
 
