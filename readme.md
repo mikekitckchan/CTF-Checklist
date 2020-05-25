@@ -17,7 +17,7 @@
    - [Symfony](#symfony)
    - [XML External Entity (XXE)](#xxe)
    - [Subdomain Takeover](#subdomain)
-   - [Path Traversal Vulnerability] (#ptv)
+   - [Path Traversal Vulnerability](#ptv)
 - [Reverse Engineering](#re)
    - [Methodology](#remeth)
 
