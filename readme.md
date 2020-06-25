@@ -11,7 +11,7 @@
    - [SUID](#suid)
 - [Web App](#webapp)
    - [SQL Injection](#sqlinj)
-   - [PHP] (#php)
+   - [PHP](#php)
    - [Flask Cookies Forge](#flaskcookie)
    - [XSS](#xss)
    - [Arbitrary File Upload](#AFU)
