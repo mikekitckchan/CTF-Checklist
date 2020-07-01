@@ -9,6 +9,9 @@
 - [Privilege Escalation](#privesc)
    - [Shell Spawning](#shellspawn)
    - [SUID](#suid)
+- [Information Leakage](#infoleak)
+- [Logic Flaw](#logicflaw)
+   - [Bypassing Rate Limit](#bypassratelimit)
 - [Web App](#webapp)
    - [SQL Injection](#sqlinj)
    - [PHP](#php)
@@ -16,7 +19,7 @@
    - [XSS](#xss)
    - [Arbitrary File Upload](#AFU)
    - [Symfony](#symfony)
-   - [Javascript RCE](#jsrce)
+   - [Javascript vuln](#jsrvuln)
    - [XML External Entity (XXE)](#xxe)
    - [Subdomain Takeover](#subdomain)
    - [Path Traversal Vulnerability](#ptv)
@@ -103,6 +106,46 @@ To find file with SUID bit. Simply use following command:
 ```
 find [directory] -perm -u=s -type f 2>/dev/null
 ```
+
+<a name="infoleak"></a>
+## Information Leakage
+Using Linkfinder to find secret endpoints of a website (Source: https://medium.com/bugbountywriteup/mining-the-web-redefining-the-art-of-hardcoded-data-finds-4fee0c8fd4f7)
+
+Using APIkeyhack to check if any api key works (Source: https://medium.com/bugbountywriteup/mining-the-web-redefining-the-art-of-hardcoded-data-finds-4fee0c8fd4f7)
+
+Use google dork find secret folders.
+
+
+
+<a name="logicflaw")</a>
+## Logic Flaw
+
+<a name="bypassratelimit"></a>
+### Bypassing rate limit
+In most app/webapp, a rate limit normally be set for login attempt or something else. To reset the rate limit, simply put %00 after your username or login email. Also, you can add space, %0d , %2e , %09 , %20 behind it. 
+
+Source: https://medium.com/bugbountywriteup/bypassing-rate-limit-like-a-pro-5f3e40250d
+
+You can also try changing user-agent, IP or cookies etc. Or check if there are any ratelimit counting from the request you sent. 
+
+Source: https://medium.com/@huzaifa_tahir/methods-to-bypass-rate-limit-5185e6c67ecd
+
+### Account Takeover
+
+
+#### Check reset password token
+
+Sometimes, a reset password token might be easy to exploit. Try check something like. "timestamp", "base64" etc to see any pattern was formed in the reset password token. An example of this is the blog post below:
+
+https://medium.com/bugbountywriteup/how-i-discovered-an-interesting-account-takeover-flaw-18a7fb1e5359
+
+#### Check password reset request
+Another way of account takeover is to check every request sent for reset password. For example, if you can see your email appears in the reset password, you can simply change the email id to another email to see if anything happened. An example of this:
+
+https://medium.com/bugbountywriteup/simple-logic-leads-to-account-takeover-63fec69e88b7
+
+
+
 
 <a name="webapp"></a>
 ## Web App 
@@ -270,8 +313,8 @@ Beacon.html%00.pdf (or other extension which is allowed by the service e.g. .jpg
 ### Symfony
 If the web app uses a php tools called symfony, you can try to access /_profile to access the log.
 
-<a name="jsrce"></a>
-### Javascript RCE
+<a name="jsvuln"></a>
+### Javascript Vuln
 
 #### Exploit eval function
 In Nodejs module, there is a function called eval. If you suspect that eval is used in backend service, it can be exploited using RCE payload. For example, if a get request return a JSON parameter without "", it is highly likely that the backend was using eval to calculate that parameter. To check, you can put below in your request, it should return current directory (e.g. /app) in its respsonse.
@@ -301,6 +344,15 @@ If the application backend uses vm as sandboxing, RCE can be run on below payloa
 ```
 const process = this.constructor.constructor('return this.process')(); process.mainModule.require('child_process').execSync('ls').toString()
 ```
+The main reason is because the vm was supposed to run some external code inside a sandbox. However, a constructor in Javascript can pointing back to its parent object. In this case, we use constructor twice here and it has been pointing to the main function of the program. Thus, it can execute "ls" in its linux function.
+
+An example of this can be found in one of the redpwnCTF2020's chellenges: Caasino. Below is one of the best writeup I found for this.
+
+https://github.com/saw-your-packet/ctfs/blob/master/redpwnCTF%202020/Write-ups.md#caasino
+
+### Vulnerability of Search Function
+
+
 
 <a name = "xxe"></a>
 ### XML External Entity (XXE)
