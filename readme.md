@@ -130,7 +130,14 @@ You can also try changing user-agent, IP or cookies etc. Or check if there are a
 
 Source: https://medium.com/@huzaifa_tahir/methods-to-bypass-rate-limit-5185e6c67ecd
 
+Another way to bypass rate limit is to use IP rotator extension in Burp Suite. 
+
+Also, brute forcing a fixed password against multiple usernames also one of the issues:
+
+https://ysamm.com/?p=396
+
 ### Account Takeover
+
 
 
 #### Check reset password token
