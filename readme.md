@@ -12,6 +12,7 @@
 - [Information Leakage](#infoleak)
 - [Logic Flaw](#logicflaw)
    - [Bypassing Rate Limit](#bypassratelimit)
+- [IDOR](#idor)
 - [Web App](#webapp)
    - [SQL Injection](#sqlinj)
    - [PHP](#php)
@@ -152,7 +153,35 @@ Another way of account takeover is to check every request sent for reset passwor
 https://medium.com/bugbountywriteup/simple-logic-leads-to-account-takeover-63fec69e88b7
 
 
+<a name="idor"></a>
+## IDOR
 
+IDOR mainly means unauthorized access to other users' information.
+
+
+### Second Order IDOR
+
+Always intercept redirection and test how redirection logic works.
+
+In the post below, it shows some less common IDOR attacks:
+
+https://blog.usejournal.com/a-less-known-attack-vector-second-order-idor-attacks-14468009781a
+
+In the post, it shows one bank web app IDOR. The original web app logic is as per below:
+
+1. After a transaction, user can retrieve its receipt from end point ```/transactions/show_receipt.aspx?id=32423423```
+2. The writer of the blog tried to access others' receipt by changing id number. However, it was redirect to error page.
+
+So, it is clear that the logic is: If id is authorized, the web app redirect user to receipt show page. If not, it redirect users to error page.
+
+Attack scenario:
+
+1. Send request to obtain user's own receipt by sending correct id.
+2. Intercept the sucess redirection page and hold it.
+3. Change id in original request page and hold the redirect page.
+4. Forward the success redirection
+
+This occurs because back end only check if the id would return success or fail without further checking.
 
 <a name="webapp"></a>
 ## Web App 
