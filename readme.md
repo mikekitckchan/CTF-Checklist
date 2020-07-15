@@ -12,6 +12,7 @@
 - [Information Leakage](#infoleak)
 - [Logic Flaw](#logicflaw)
    - [Bypassing Rate Limit](#bypassratelimit)
+   - [Account takeover using OTP](#acctakeotp)
 - [IDOR](#idor)
 - [Web App](#webapp)
    - [SQL Injection](#sqlinj)
@@ -137,7 +138,13 @@ Also, brute forcing a fixed password against multiple usernames also one of the 
 
 https://ysamm.com/?p=396
 
-### Account Takeover
+<a name="acctakeotp"></a>
+### Account Takeover using OTP
+For OTP account (i.e. send some specific code to your mobile or email), check few things below:-
+
+1. the OTP is leaked in initial response?
+2. the OTP can be used for other account?
+3. the OTP can be brute forced?
 
 
 
