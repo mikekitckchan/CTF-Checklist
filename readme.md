@@ -322,6 +322,15 @@ This command would brute force and find out the secret key. Once, a secret key i
 <a name = "xss"></a>
 ### XSS
 
+#### Where to look for
+
+Try everything that user's input can reflect in template. Some examples:
+
+1. Search field (If not found, it returns "xxx" not found);
+2. Login page (If user not found, it returns "user" not found);
+3. Some parameter in URL reflect in the page (e.g. url parameter url=https://xxx.com/ reflect in page request form)
+
+
 #### url with utm_source
 
 If found a url with utm_source parameter, it is likely that a reflected xss can be done as utm_source cannot escape easily. An example is as per below:-
