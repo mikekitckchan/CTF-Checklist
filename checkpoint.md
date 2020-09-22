@@ -1,6 +1,6 @@
 # Table of Content
-- [session] (#session)
-- [CSRF] (#csrf)
+- [session](#session)
+- [CSRF](#csrf)
 - [Account](#Account)
 
 <a name="session"></a>
