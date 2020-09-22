@@ -3,6 +3,8 @@
 - [CSRF](#csrf)
 - [Account](#Account)
 - [IDOR](#IDOR)
+- [XSS](#xss)
+- [JSON](#json)
 
 <a name="session"></a>
 # session
@@ -63,4 +65,18 @@ example.com/./admin/./ --> 200
 8.
 example.com/admin/ --> 302
 example.com/admin..;/ --> 200
+```
+<a name="xss"></a>
+# XSS
+```
+1. Try Login page (Reflect username with no such user)
+2. Try search (Reflect cannot find such thing)
+3. Any other that would reflect to the page
+```
+
+<a name="json"></a>
+# JSON
+```
+1. {"id":1} --> {"id":{"id":1}}
+
 ```
