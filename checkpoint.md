@@ -4,7 +4,7 @@
 - [Account](#Account)
 - [IDOR](#IDOR)
 - [XSS](#xss)
-- [JSON](#json)
+- [API](#API)
 
 <a name="session"></a>
 # session
@@ -65,6 +65,31 @@ example.com/./admin/./ --> 200
 8.
 example.com/admin/ --> 302
 example.com/admin..;/ --> 200
+9.
+If '/endpoint' ->403
+Try:
+/endpoint/
+/endpoint/%20
+/endpoint.html
+/endpoint/?someparameter
+/endpoint#
+/endpoint.json
+/endpoint.cgi
+/endpoint.php
+/endpoint.aspx
+10.
+{"id":1} --> 403
+try 
+{"id":{"id":1}}
+{"id":"1"}
+{"id":[1]}
+
+11.
+in pdf generator, try generate pdf with different user id
+
+12.
+/api/v2/userid/1 -> 403
+/api/v1/userid/1 -> 200
 ```
 <a name="xss"></a>
 # XSS
@@ -77,6 +102,8 @@ example.com/admin..;/ --> 200
 <a name="json"></a>
 # JSON
 ```
-1. {"id":1} --> {"id":{"id":1}}
+1. In Json: {"id":1} --> {"id":{"id":1}}
+2. /api/v2/console -> 200, then try /api/v2/console?cmd=id
 
+4. 
 ```
