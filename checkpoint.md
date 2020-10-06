@@ -131,5 +131,5 @@ For each parameter, check
 4. For numeric input, check negative number or string
 5. Try something like {{2+2}}
 6. Try put in URL to see if it would submit request to that URL
-5. 
+7. Try command like whoami. 
 ```
