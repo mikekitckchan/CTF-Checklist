@@ -6,6 +6,7 @@
 - [XSS](#xss)
 - [SSRF/Redirect](#ssrf) 
 - [API](#API)
+- [SPF](#SPF)
 
 <a name="session"></a>
 # session
@@ -132,4 +133,12 @@ For each parameter, check
 5. Try something like {{2+2}}
 6. Try put in URL to see if it would submit request to that URL
 7. Try command like whoami. 
+```
+
+<a name="SPF"></a>
+# SPF
+```
+Step:
+Try find if any record in https://www.kitterman.com/spf/validate.html
+If not, send an email using emkei.cz
 ```
