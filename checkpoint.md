@@ -4,13 +4,14 @@
 - [Account](#Account)
 - [IDOR](#IDOR)
 - [XSS](#xss)
+- [SSRF/Redirect](#ssrf) 
 - [API](#API)
 
 <a name="session"></a>
 # session
 ```
 1. Check if session would be reused after logout
-2. Check if session can be decoded using base64, md5
+2. Check if session can be decoded using base64, md5, sha256
 3. Check if session can be decoded using Flask Forge
 ```
 
@@ -20,7 +21,7 @@
 1. Check if a random number with same length would be valid for csrf token
 2. Check if csrf token are tight to session
 2. Check if csrf token can be reused 
-3. Check if csrf token can be decoded using base64, md5 etc.
+3. Check if csrf token can be decoded using base64, md5, sha256 etc.
 ```
 
 <a name="useraccount"></a>
@@ -98,6 +99,25 @@ in pdf generator, try generate pdf with different user id
 2. Try search (Reflect cannot find such thing)
 3. Any other that would reflect to the page
 ```
+<a name="ssrf"></a>
+# SSRF/Redirect
+```
+Check if any parameter, header took url as input as would lead to redirect
+check if any url in meta tag of html would lead to redirect
+check API endpoint in Javascript would lead to redirect.
+Check for function in Javascript file e.g. document.location, document.URL, doucment.open, window.location.href, window.navigate, window.open
+```
+Trick to bypass filter
+```
+Using HtTps instead of https
+Add space of %00 before or after the url
+remove https (e.g. //evil.com)
+Replace by uri encoding (e.g. http:// to %68%74%74%70%3a%2f%2f)
+Using \\ instead of //
+<<insecured url>>?<<secured url>>
+<<insecured url>>%23<<secured url>>
+```
+
 
 <a name="json"></a>
 # JSON
