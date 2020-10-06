@@ -19,9 +19,11 @@
 # Csrf
 ```
 1. Check if a random number with same length would be valid for csrf token
-2. Check if csrf token are tight to session
-2. Check if csrf token can be reused 
-3. Check if csrf token can be decoded using base64, md5, sha256 etc.
+2. Check if empty csrf token can be treated as valid
+3. Check if changing POST request to GET request can disregard the csrf token and successfully changing info.
+4. Check if csrf token are tight to session
+5. Check if csrf token can be reused in other sessions.
+6. Check if csrf token can be decoded using base64, md5, sha256 etc.
 ```
 
 <a name="useraccount"></a>
@@ -119,11 +121,15 @@ Using \\ instead of //
 ```
 
 
-<a name="json"></a>
-# JSON
+<a name="API"></a>
+# API
+For each parameter, check
 ```
-1. In Json: {"id":1} --> {"id":{"id":1}}
-2. /api/v2/console -> 200, then try /api/v2/console?cmd=id
-
-4. 
+1. XSS payloads and check response
+2. Type in very long value (e.g. 100 As or 100 1s)
+3. Type very long value (e.g. 100 As or 100 1s) with %00, %0d , %2e , %09 , %20, space etc. in between
+4. For numeric input, check negative number or string
+5. Try something like {{2+2}}
+6. Try put in URL to see if it would submit request to that URL
+5. 
 ```
