@@ -46,17 +46,65 @@ var userB = new User("Sally", "alive");
 
 ```js
 
-userB.constructor.prototype.deleted = "yes";
+userB.constructor.prototype.is_admin = "yes";
 
 ```
 
 - According to the code above, it should affect userB. However, if we print out userA's deleted property, you would find out that it has changed userA as well:
 
 ```js
-console.log(userA.deleted); //yes
+console.log(userA.is_admin); //yes
 ```
 
-### 
+Similary, ```constructor.prototype``` can also be presented as ```__proto__``` like below:-
+
+```js
+
+userB.__proto__.is_admin = "yes";
+```
+
+
+### Prototype pollution using Merge
+
+- Consider 2 objects as below:
+
+```js
+var userA = {"name":"John" , "password":"123", "admin":"True"};
+var userB = {"name":"Peter", "password":"234"};
+
+```
+- Now, we write a function to merge these 2 objects
+```js
+const isObject = obj => obj && obj.constructor && obj.constructor === Object;
+function merge(dest, src) {
+    for (var attr in src) {
+        if (isObject(dest[attr]) && isObject(src[attr])) {
+            merge(dest[attr], src[attr]);
+        } else {
+            dest[attr] = src[attr];
+        }
+    }
+    return dest
+}
+```
+- In above code, it basically just merge 2 objects into 1. So, if we run the code below:-
+
+```js
+var c=merge(userA, userB);
+
+console.log(c); //{name:"Peter",password:"234",admin:"True"}
+```
+
+- Now, if we add below code:
+```js
+var userC = JSON.parse('{"__proto__":{"is_hacked":"True"}}');
+var c=merge(userA, userC);
+
+console.log(userB.is_hacked); //True
+```
+
+- You can see that if we create userC, we pass a property called __proto__ to the new userC. Then, if we merge this with userA, the new property would also affect userB that is supposed not to be affected in this.
+
 
 
 
