@@ -1,7 +1,7 @@
 ## Prototype Pollution
 
 ### Introduction
-- In Javascript, every objects are collections of key pair. Each pairs are named as properties. For example:
+- In Javascript, every objects are collections of key pair. Each pairs are what we called properties in Javascript. For example:
 
 ```js
 function User(username, password){
@@ -10,7 +10,7 @@ function User(username, password){
 }
 ```
 
-- In above example, an User is an object and its properties are username and password. To create a new user, can simply input codes as below:
+- In above example, an User is an object and its properties are username and password. To create a new user, we can simply input:
 
 ```js
 var userA = new User("John", "12345678");
@@ -19,7 +19,7 @@ console.log("User "+userA.username + " is created"); //output: User John is crea
 
 ```
 
-- To change the object properties, we can construction a function to do this. For example, if we want to create a function to change user password, we can make a function like below:
+- To change the object properties, we can make a function to change the value of its property(ies). For example, if we want to create a function to change user password, we can make a function like below:
 
 ```js
 User.prototype.change_password = function(var new_pw){
@@ -30,7 +30,7 @@ userA.change_password("1234");
 
 console.log("User "+userA.name+" password now is "+userA.password; //User John passowrd now is 1234
 ```
-- In the above code, a new word prototype came up. Prototype is a property of a function which is also an object itself. In the above code, we have created another property for its prototype called change_password, of which change_password can be used to change User's password. 
+- In the above code, a new word prototype came up. Prototype instruction the change_password function pointed back to User object and changed its underlying property(ies). In the example above, we used ```this.password=new_pw;``` to instruct the function to change userA's password. 
 
 ### First Exploit using prototype pollution
 
@@ -42,7 +42,7 @@ var userB = new User("Sally", "alive");
 
 ``` 
 
-- Considering we add one more property to like below:
+- Considering we have another code below:
 
 ```js
 
@@ -50,7 +50,7 @@ userB.constructor.prototype.is_admin = "yes";
 
 ```
 
-- According to the code above, it should affect userB. However, if we print out userA's deleted property, you would find out that it has changed userA as well:
+- According to the code above, constructor means it pointed back to the object of userB (i.e. User) and add a property to User called is_admin with default value "yes". As this changed apply to the object User, if we print out userA's is_admin property, we would find out that it has changed userA as well:
 
 ```js
 console.log(userA.is_admin); //yes
