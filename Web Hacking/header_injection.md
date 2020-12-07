@@ -33,7 +33,7 @@ Location:www.redirected.com
 ```
 - In this case, try amending url parameter to www.redirected.com%0AInjected-header:%20Value. You might able to inject a header value;
 
-## Bypass Host Header injection check
+# Bypass Host Header injection check
 
 - Normally, there would be a check on whether the host header is valid. But if the site has available all subdomain of its site to access. Try:
 
