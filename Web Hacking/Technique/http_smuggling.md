@@ -12,7 +12,7 @@
 
 ### Pipeline
 
-- In http 1.1, there is also a new technology introduced called Pipeline. In Pipeline, multiple requests can be sent via one connction instead of sending each request in one connection;
+- In http 1.1, there is also a new technology introduced called Pipeline. In Pipeline, multiple requests can be sent via one connection instead of sending each request in one connection;
 
 - Thus, under Pipeline, server can handles multiple request from client simultaneously;
 
