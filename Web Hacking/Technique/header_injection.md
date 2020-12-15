@@ -49,4 +49,12 @@ Host: evil.com?.example.com
 
 - In order to let the app server knows which content original user is requesting. ```X-Forwarded-Host: site.com/sth``` would be added to the request.
 
+- The subject injection can lead to below attack vectors:
+
+### Cache Poisoning 
 - In some case, if attacker inject ```X-Forwarded-Host: evil.com``` in request and send for several time. A cache poisoning might be happened. Thus, when victim visit ```site.com/sth```, it would be redirected to ```evil.com```.
+
+### Link poisoning 
+- For Reset password function, injecting ```X-Forwarded-Host: evil.com``` in request might lead to link poisoning to reset password link.
+
+
