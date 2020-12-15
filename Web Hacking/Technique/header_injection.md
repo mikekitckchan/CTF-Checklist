@@ -41,4 +41,12 @@ Host: evil.com?.example.com
 
 - If it leads to a link sending back to that subdomain and sensitive info is inside URL, it might lead to leakage of sensitive info. 
 
+# X-Forwarded-Host
 
+- X-Forwarded-Host header used to gives the content of the Host header the client sent to the proxy. 
+
+- For example, if a user visit ```site.com/sth``` and it directs to a proxy server, the proxy server would interpret it to real ip (e.g. 111.223.333.222:8080). As such, the host header in the request sent from proxy would change to its real ip address. 
+
+- In order to let the app server knows which content original user is requesting. ```X-Forwarded-Host: site.com/sth``` would be added to the request.
+
+- In some case, if attacker inject ```X-Forwarded-Host: evil.com``` in request and send for several time. A cache poisoning might be happened. Thus, when victim visit ```site.com/sth```, it would be redirected to ```evil.com```.
