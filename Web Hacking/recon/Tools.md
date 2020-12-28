@@ -28,3 +28,6 @@
 ## All-in-One
 - https://github.com/Echocipher/AUTO-EARN
 - 
+
+## Making fuzz List
+- https://github.com/tehryanx/sprawl?fireglass_rsn=true
