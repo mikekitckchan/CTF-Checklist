@@ -20,3 +20,15 @@
 
 #### Login Bruteforce
 - Check if adding %00 space, %0d , %2e , %09 , %20 after username can bypass rate limit.
+
+- Adding below header to bypass ratelimit. 
+
+```
+X-Originating-IP: IP
+X-Forwarded-For: IP
+X-Remote-IP: IP
+X-Remote-Addr: IP
+X-Client-IP: IP
+X-Host: IP
+X-Forwared-Host: IP
+```
