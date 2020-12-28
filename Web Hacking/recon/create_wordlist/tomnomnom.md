@@ -1,4 +1,4 @@
-## Introduction
+## TomNomNom's method
 
 This is a note taking from talk of TomNomNom from NahamSec's Live Recon Series. This talk is about how to create a customized wordlist for a target.
 
