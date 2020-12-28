@@ -18,6 +18,9 @@
 - https://github.com/lijiejie/ds_store_exp (.DS_Store file leak)
 - 
 
+## 403 Bypass
+- https://github.com/yunemse48/403bypasser
+
 ## Vulnerability scanner
 - https://github.com/zhzyker/vulmap
 
