@@ -63,3 +63,5 @@ try
 ```
 
 ```
+/../../../etc/passwd -> 403
+adding view-source: in the beginning -> 200
