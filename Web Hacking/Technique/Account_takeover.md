@@ -6,7 +6,7 @@
 
 - Try make 2 requests for password reset with victim e-mail and attacker's e-mail with same session cookies. In some cases, password link would be sent to both e-mails.
 
-- To submit registration, try intercept and add "X-Forwarded-For", "X-Forwarded-Host" and add evil.com. Check if the confirmation link would be showing evil.com
+- To submit registration, try intercept and add "X-Forwarded-For", "X-Forwarded-Host", add duplicate "host" and add evil.com. Check if the confirmation link would be showing evil.com
 
 - Check if token in Password reset link is weakly encrypted. Check "timestamp", "base64" or reuse password token in other accounts.
 
