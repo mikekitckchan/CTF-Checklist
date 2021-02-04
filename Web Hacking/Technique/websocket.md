@@ -1,10 +1,11 @@
 ## What is Websocket
 
-- Websocket is a technology in html5 that allows 2-ways communication under TCP;
+- Websocket is a technology in html5 that allows 2-ways communication under TCP.
+
+- It enables a web to deliver info to browser in realtime. (e.g. a chat app)
 
 - RFC documents for the subject connection can refer to RFC6455 and RFC7936
 
-- 
 
 ## Example of a simple websocket
 
@@ -31,4 +32,9 @@ Sec-WebSocket-Protocol: chat
 ```
 
 - Below are explanation of the lines above:
+
+## Vulnerability
+
+#### Cross-site web socket hijacking
+
 
