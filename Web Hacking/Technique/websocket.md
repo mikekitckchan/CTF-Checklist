@@ -37,4 +37,7 @@ Sec-WebSocket-Protocol: chat
 
 #### Cross-site web socket hijacking
 
+- Online tester
+
+https://cow.cat/cswsh.html
 
