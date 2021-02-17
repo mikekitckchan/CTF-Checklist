@@ -37,7 +37,9 @@ Sec-WebSocket-Protocol: chat
 
 #### Cross-site web socket hijacking
 
-- Online tester
+- For the HTTP request to establish websocket connection, a check for origin/referrer shall be in place. If not, attacker might able to initiate a connection from its own site and communicate with server. 
+
+- An Online tester for cross-site web socket hijacking.
 
 https://cow.cat/cswsh.html
 
