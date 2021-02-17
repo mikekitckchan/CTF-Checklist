@@ -15,6 +15,10 @@
 
 - Check if changing account details (including password) include csrf token in its POST request. (Please refer csrf attack for more details)
 
+#### Duplicated Registration
+
+- In some wierd cases, register a duplicated username and change its password might lead to password change in both accounts.
+
 #### OTP
 - Check if OTP can be bruteforced, reused in other accounts  or shown in initial request.
 
