@@ -10,6 +10,8 @@
 
 - Check if token in Password reset link is weakly encrypted. Check "timestamp", "base64" or reuse password token in other accounts.
 
+- When click on the password reset link, also open a link to third party site. Then, check if the reset link is leaked to third party site in referrer header.
+
 #### Change password
 - Try change attacker's password but adding victim's e-mail in request. Check if it would change victim pasword too.
 
