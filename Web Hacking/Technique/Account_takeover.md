@@ -22,6 +22,11 @@
 #### OTP
 - Check if OTP can be bruteforced, reused in other accounts  or shown in initial request.
 
+#### Manipulating Response
+
+- If some web app only relies on the response from a authorization server, after inputting wrong credential, try change the 401 response to 200 response.
+
+
 #### Login Bruteforce
 - Check if adding %00 space, %0d , %2e , %09 , %20 after username can bypass rate limit.
 
