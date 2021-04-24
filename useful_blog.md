@@ -4,6 +4,7 @@
 - https://ajxchapman.github.io
 - https://samcurry.net/blog/
 - https://portswigger.net/research/articles
+- https://vickieli.dev
 
 ## Smart Contract
 
