@@ -14,7 +14,7 @@ Then, to enumerate, you may:
 
 ```
 ./reconftw.sh -d target.com -r > subdomain.txt
-``
+```
 
 Then, you will get a list of subdomains
 
