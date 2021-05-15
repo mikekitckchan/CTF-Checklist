@@ -1,5 +1,6 @@
 # Table of Content
 - [session](#session)
+- [Cache Poison/Deception](#cache)
 - [CSRF](#csrf)
 - [Account](#Account)
 - [IDOR](#IDOR)
@@ -16,6 +17,16 @@
 3. Check if session can be decoded using Flask Forge
 ```
 
+<a name="cache"></a>
+# Cache Poison/Deception
+```
+1. For the page that can be cached(Normally CDN one), try inject evil.com in host header or other headers such as X-Forwarded-For, X-Forwarded-Host, see if evil page would be cached.
+2. For page that can be cached, try hidden parameter and header that would reflect in respsonse and try to obtain an xss.
+3. For sensitive page, try to cache if with hidden parameter (need to understand web app cache policy)
+4. 
+
+```
+
 <a name="csrf"></a>
 # Csrf
 ```
@@ -27,8 +38,8 @@
 6. Check if csrf token can be decoded using base64, md5, sha256 etc.
 ```
 
-<a name="useraccount"></a>
-# User Account
+<a name="Account"></a>
+# Account
 ```
 1. To submit registration, try intercept and add "X-Forwarded-For", "X-Forwarded-Host" and add evil.com. Check if the confirmation link would be showing evil.com
 2. Check if OTP can be bruteforced, reused in other accounts  or shown in initial request.
