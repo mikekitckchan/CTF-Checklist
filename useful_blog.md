@@ -10,3 +10,7 @@
 ## Smart Contract
 
 - https://samczsun.com
+
+## Reverse Engineering
+
+- blog.whatguy.com
