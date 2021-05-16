@@ -5,6 +5,7 @@
 - https://samcurry.net/blog/
 - https://portswigger.net/research/articles
 - https://vickieli.dev
+- https://devcraft.io/
 
 ## Smart Contract
 
