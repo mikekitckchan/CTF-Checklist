@@ -6,6 +6,26 @@
 
 - AWS S3 bucket has its unique URL and normally look like ```https://bucket-name.s3.Region.amazonaws.com/```. An example is like ```https://my-bucket.s3.us-west-2.amazonaws.com/puppy.png```;
 
+## How to find bucket name of the target
+
+- Look for upload/download function
+
+## Useful github dorking 
+
+```
+S3_USER_SECRET=
+S3_KEY_ASSETS=
+http://S3.AMAZONAWS.COM=
+S3_KEY_APP_LOGS=
+S3_BUCKET_NAME_APP_LOGS=
+```
+
+
+
+## Tools
+
+Use bucketbunny to look for open s3 
+
 
 ## Vulnerability
 #### Misconfig of access right
