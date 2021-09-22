@@ -1,0 +1,7 @@
+/var/log/dev.log
+/db_wpp/api/runtime/log/202106/22.log
+/runtime/log/202009/24.log
+/static/issues/300/attachments/out.log
+/page/access.log
+/logs/access.log
+/logs/app.log
